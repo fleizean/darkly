@@ -1,49 +1,50 @@
 # Directory Traversal Attack Explanation
 
-This README explains the directory traversal attack performed using the script in [main.py](#file:main.py-context). The goal of this attack was to access the `/etc/passwd` file on the server and retrieve the flag.
+Bu README, [main.py](#file:main.py-context) dosyasını kullanarak gerçekleştirilen dizin geçiş saldırısını açıklar. Bu saldırının amacı, sunucudaki `/etc/passwd` dosyasına erişmek ve bayrağı elde etmekti.
 
-## Files
+## Dosyalar
 
-- **[main.py](#file:main.py-context)**: The main script that performs the directory traversal attack.
-- **[flag.txt](#file:flag.txt-context)**: Contains the flag retrieved from the attack.
-- **[success.html](#file:success.html-context)**: The HTML file generated upon successful retrieval of the target file.
+- **[main.py](#file:main.py-context)**: Dizin geçiş saldırısını gerçekleştiren ana betik.
+- **[flag.txt](#file:flag.txt-context)**: Saldırıdan elde edilen bayrağı içerir.
+- **[success.html](#file:success.html-context)**: Hedef dosyanın başarılı bir şekilde alınması durumunda oluşturulan HTML dosyası.
 
-## Attack Description
+## Saldırı Açıklaması
 
-### Objective
+### Amaç
 
-The objective of this attack was to exploit a directory traversal vulnerability on the server to access the `/etc/passwd` file. This file typically contains user account information on Unix-based systems.
+Bu saldırının amacı, sunucudaki bir dizin geçiş zafiyetini kullanarak `/etc/passwd` dosyasına erişmekti. Bu dosya genellikle Unix tabanlı sistemlerde kullanıcı hesap bilgilerini içerir.
 
-### Steps
+### Adımlar
 
-1. **Setup**: The script uses the `aiohttp` library to perform asynchronous HTTP requests.
-2. **Traversal Path**: The script constructs a traversal path by appending `../` to the base URL until the target file is found.
-3. **Request Handling**: For each constructed URL, the script sends a GET request to the server.
-4. **Response Check**: The script checks the response content for the presence of the word "flag". If found, it writes the content to `success.html`.
-5. **Retry Mechanism**: The script includes a retry mechanism with a delay to handle intermittent failures.
+1. **Kurulum**: Betik, asenkron HTTP istekleri gerçekleştirmek için `aiohttp` kütüphanesini kullanır.
+2. **Geçiş Yolu**: Betik, hedef dosya bulunana kadar temel URL'ye `../` ekleyerek bir geçiş yolu oluşturur.
+3. **İstek İşleme**: Oluşturulan her URL için sunucuya bir GET isteği gönderir.
+4. **Yanıt Kontrolü**: Betik, yanıt içeriğinde "flag" kelimesinin varlığını kontrol eder. Eğer bulunursa, içeriği `success.html` dosyasına yazar.
+5. **Yeniden Deneme Mekanizması**: Betik, aralıklı hataları ele almak için bir gecikme ile yeniden deneme mekanizması içerir.
 
-### Execution
+### Çalıştırma
 
-Run the script using the following command:
+Betiği aşağıdaki komutla çalıştırın:
 
 ```sh
 python main.py
 ```
 
-The script will continue to append `../` to the URL and send requests until it successfully retrieves the `/etc/passwd` file.
+Betik, `/etc/passwd` dosyasını başarıyla alana kadar URL'ye `../` eklemeye ve istek göndermeye devam edecektir.
 
-## Flag
+## Bayrak
 
-The flag retrieved from the attack is stored in [flag.txt](#file:flag.txt-context):
+Saldırıdan elde edilen bayrak [flag.txt](#file:flag.txt-context) dosyasında saklanır:
 
 ```
 b12c4b2cb8094750ae121a676269aa9e2872d07c06e429d25a63196ec1c8c1d0
 ```
 
-## Result
+## Sonuç
 
-Upon successful retrieval, the content of the `/etc/passwd` file is written to [success.html](#file:success.html-context).
+Başarılı bir şekilde alındığında, `/etc/passwd` dosyasının içeriği [success.html](#file:success.html-context) dosyasına yazılır.
 
-## Conclusion
+## Sonuç
 
-This attack demonstrates the importance of validating and sanitizing user input on the server-side to prevent directory traversal vulnerabilities. Always ensure that your web applications are secure against such attacks.
+Bu saldırı, sunucu tarafında kullanıcı girdilerini doğrulamanın ve temizlemenin önemini göstermektedir. Web uygulamalarınızın bu tür saldırılara karşı güvenli olduğundan emin olun.
+

@@ -1,15 +1,15 @@
 # Redirection / Yönlendirme
-This project involves working with redirection in web applications. Redirection is used to navigate users to different pages or external sites.
+Bu proje, web uygulamalarında yönlendirme ile çalışmayı içerir. Yönlendirme, kullanıcıları farklı sayfalara veya harici sitelere yönlendirmek için kullanılır.
 
-![Redirection](redirections.png)
+![Yönlendirme](redirections.png)
 
-## Purpose
+## Amaç
 
-The purpose of this project is to understand how redirection can be used to navigate users to different pages or external sites.
+Bu projenin amacı, yönlendirmenin kullanıcıları farklı sayfalara veya harici sitelere yönlendirmek için nasıl kullanılabileceğini anlamaktır.
 
-## Example
+## Örnek
 
-Here is a simple example of redirection in an HTML page:
+Bir HTML sayfasında yönlendirme örneği:
 
 ```html
 <ul class="icons">
@@ -19,18 +19,18 @@ Here is a simple example of redirection in an HTML page:
 </ul>
 ```
 
-In this example, clicking on the icons will redirect the user to the specified social media sites.
+Bu örnekte, ikonlara tıklamak kullanıcıyı belirtilen sosyal medya sitelerine yönlendirecektir.
 
-## Use Cases
+## Kullanım Durumları
 
-- Navigating to external sites
-- Redirecting after form submission
-- Handling outdated URLs
+- Harici sitelere yönlendirme
+- Form gönderiminden sonra yönlendirme
+- Güncel olmayan URL'leri yönetme
 
-## Security Considerations
+## Güvenlik Hususları
 
-While redirection is useful, it can be exploited for phishing attacks. Always validate and sanitize URLs to ensure security.
+Yönlendirme faydalı olsa da, kimlik avı saldırıları için kullanılabilir. Her zaman URL'leri doğrulayın ve temizleyin, güvenliği sağlamak için.
 
-## Conclusion
+## Sonuç
 
-Redirection is a useful tool for web developers to navigate users to different pages or external sites. However, it should be used with caution and proper security measures.
+Yönlendirme, web geliştiricilerinin kullanıcıları farklı sayfalara veya harici sitelere yönlendirmesi için faydalı bir araçtır. Ancak, dikkatli ve uygun güvenlik önlemleri ile kullanılmalıdır.

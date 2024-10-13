@@ -1,16 +1,16 @@
 # Hidden Input / Gizli Girdi
 
-This project involves working with hidden input fields in HTML forms. Hidden inputs are used to store data that should not be visible or editable by the user.
+Bu proje, HTML formlarında gizli giriş alanlarıyla çalışmayı içerir. Gizli girişler, kullanıcı tarafından görünmemesi veya düzenlenmemesi gereken verileri depolamak için kullanılır.
 
-![Hidden Input](hidden_input.png)
+![Gizli Giriş](hidden_input.png)
 
-## Purpose
+## Amaç
 
-The purpose of this project is to understand how hidden inputs can be used to pass data between the client and server without displaying it to the user.
+Bu projenin amacı, gizli girişlerin verileri kullanıcıya göstermeden istemci ve sunucu arasında nasıl iletilebileceğini anlamaktır.
 
-## Example
+## Örnek
 
-Here is a simple example of a hidden input field in an HTML form:
+İşte bir HTML formunda gizli bir giriş alanının basit bir örneği:
 
 ```html
 <form action="#" method="POST">
@@ -19,19 +19,19 @@ Here is a simple example of a hidden input field in an HTML form:
 </form>
 ```
 
-In this example, the `mail` value is sent to the server when the form is submitted, but it is not visible to the user.
+Bu örnekte, `mail` değeri form gönderildiğinde sunucuya gönderilir, ancak kullanıcıya görünmez.
 
-## Use Cases
+## Kullanım Durumları
 
-- Storing session tokens
-- Passing user IDs
-- Keeping track of state information
+- Oturum belirteçlerini depolama
+- Kullanıcı kimliklerini iletme
+- Durum bilgilerini takip etme
 
-## Security Considerations
+## Güvenlik Hususları
 
-While hidden inputs are not visible to users, they can still be manipulated through browser developer tools. Always validate and sanitize data on the server side to ensure security.
+Gizli girişler kullanıcılar tarafından görünmese de, tarayıcı geliştirici araçları aracılığıyla manipüle edilebilir. Güvenliği sağlamak için her zaman verileri sunucu tarafında doğrulayın ve temizleyin.
 
-## Conclusion
+## Sonuç
 
-Hidden inputs are a useful tool for web developers to pass data without displaying it to users. However, they should be used with caution and proper security measures.
+Gizli girişler, geliştiricilerin verileri kullanıcıya göstermeden iletmesi için kullanışlı bir araçtır. Ancak, dikkatli kullanılmalı ve uygun güvenlik önlemleri alınmalıdır.
 
