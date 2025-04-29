@@ -10,7 +10,20 @@ XSS (Cross-Site Scripting), bir saldırganın, bir web uygulamasına kötü niye
 
 Bu adımda, XSS açığını kullanarak belirli bir sayfaya kötü niyetli bir kod enjekte ediyoruz. Kullanılan basit XSS kodu: `<script>alert('xss Test');</script>`. Bu kod, flag.txt dosyasındaki veriyi elde etmemize yardımcı olacak.
 
-### Adım 2: flag.txt Dosyasının İçeriği
+### Adım 2: Input Değişikliği
+Orijinal input kodu:
+```html
+<input name="txtName" type="text" size="30" maxlength="10">
+```
+
+Bu kodu aşağıdaki gibi değiştirerek maxlength sınırını artırdık:
+```html
+<input name="txtName" type="text" size="30" maxlength="4200">
+```
+
+Bu değişiklik sayesinde name alanı içerisine yazdığımız (script tagsiz) her saldırı çalışacak.
+
+### Adım 3: flag.txt Dosyasının İçeriği
 ```plaintext
 0fbb54bbf7d099713ca4be297e1bc7da0173d8b3c21c1811b916a3a86652724e
 ```

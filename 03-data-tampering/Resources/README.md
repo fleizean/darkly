@@ -1,4 +1,5 @@
-# Survey Voting Cheat
+# Tampering Attack in Survey Voting
+
 Anket sayfasında kullanıcılar Laurie, Mathieu, Thor, Ly ve Zaz için oy kullanabilirler. Oylamanın amacı açıklanmamış, bu yüzden en iyi ayakkabı bağcıklarına sahip kişiyi oyladığımızı varsayalım. Kullanıcılar seçtikleri kişi için 1 ile 10 arasında puan ekleyebilirler. Ancak, sayfanın koduna yakından bakarsak, aşağıdaki durumu gözlemleyebiliriz:
 
 ![Anket Hilesi](survey-cheat.png)

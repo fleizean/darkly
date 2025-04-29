@@ -2,7 +2,11 @@
 
 Bu projede, bir web uygulamasının şifresini bulmak için brute force saldırı yöntemini kullandık. Bu süreci açıklayan dosyalar ve içerikleri aşağıda listelenmiştir:
 
-- [FLAG.TXT](#file:flag.txt-context)
+Bruteforce, kelime anlamıyla kaba kuvvet yöntemi anlamına gelir. Bu saldırı tipi, bir sistemin kimlik doğrulama mekanizmasını aşmak için sistematik olarak olası tüm şifre kombinasyonlarını deneme yöntemidir. Saldırgan, sistemin yapısını analiz etmeden doğrudan şifre tahminleri yaparak giriş yapmaya çalışır.
+
+Bu projede, yaygın şifre listelerinden yararlanarak hedef web uygulamasına erişim sağlamayı başardık. Kullandığımız Python script'i, çeşitli kullanıcı adları ve yaygın şifreler ile giriş denemesi yaparak "admin" kullanıcısı ve "shadow" şifresi ile sisteme başarıyla giriş yaptı.
+
+
 - [MAIN.PY](#file:main.py-context)
 - [SUCCESS_ADMIN_SHADOW.HTML](#file:success_admin_shadow.html-context)
 
@@ -86,7 +90,7 @@ if __name__ == "__main__":
 ```
 
 ## SUCCESS_ADMIN_SHADOW.HTML
-```django-html
+```html
 <!DOCTYPE HTML>
 <html>
     <head>
