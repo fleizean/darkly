@@ -34,4 +34,3 @@ Gizli girişler kullanıcılar tarafından görünmese de, tarayıcı geliştiri
 ## Sonuç
 
 Gizli girişler, geliştiricilerin verileri kullanıcıya göstermeden iletmesi için kullanışlı bir araçtır. Ancak, dikkatli kullanılmalı ve uygun güvenlik önlemleri alınmalıdır.
-
