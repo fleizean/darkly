@@ -2,6 +2,8 @@
 
 Parametre kurcalama, saldırganların bir uygulamanın davranışını manipüle etmek için URL, form veya çerezlerdeki parametreleri değiştirdiği bir web güvenlik açığıdır. Daha detaylı örneklerle açıklayayım.
 
+![Parametre Kurcalama](redirections.png)
+
 ## Parametre Kurcalama Nasıl Çalışır
 
 Web uygulamalarında, parametreler sayfalar arasında veya sunucuya veri aktarmak için kullanılır. Bu parametreler şu şekillerde bulunabilir:
