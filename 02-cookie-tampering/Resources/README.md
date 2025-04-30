@@ -33,20 +33,20 @@ Cookie tampering (çerez kurcalama), bir saldırganın web uygulaması tarafınd
 
 ```javascript
 // Bir çerez ayarla
-document.cookie = 'I_am_admin=b3d8e3397dd58186292b9e6e4e99f391';
+document.cookie = 'I_am_admin=68934a3e9455fa72420237eb05902327';
 ```
 
-Çerezdeki ikinci değer `b3d8e3397dd58186292b9e6e4e99f391` bir MD5 hash gibi görünmektedir. MD5 (Message-Digest Algorithm 5), 128-bit (16-byte) hash değeri üreten ve genellikle 32 karakterlik onaltılık sayı olarak temsil edilen yaygın bir kriptografik hash fonksiyonudur.
+Çerezdeki ikinci değer `68934a3e9455fa72420237eb05902327` bir MD5 hash gibi görünmektedir. MD5 (Message-Digest Algorithm 5), 128-bit (16-byte) hash değeri üreten ve genellikle 32 karakterlik onaltılık sayı olarak temsil edilen yaygın bir kriptografik hash fonksiyonudur.
 
 Örneğinizde:
 
 - `I_am_admin`: Muhtemelen kullanıcı rolünü veya kullanıcı adını temsil eder.
-- `b3d8e3397dd58186292b9e6e4e99f391`: Bu, `true` kelimesinin MD5 hash'i.
+- `68934a3e9455fa72420237eb05902327`: Bu, `false` kelimesinin MD5 hash'i.
 
-Doğrulamak için, `true` kelimesini bir MD5 hash aracı veya fonksiyonu kullanarak hashleyebilirsiniz. İşte `true` için sonuç:
+Bu değeri `true` kelimesinin MD5 hash'i ile değiştirdiğimizde flag ı elde ediyoruz.
 
 ```plaintext
-MD5("true") = b3d8e3397dd58186292b9e6e4e99f391
+MD5("true") = b326b5062b2f0e69046810717534cb09
 ```
 
 Bu, ikinci değerin `true` kelimesinin MD5 hash'i olduğunu gösterir.
