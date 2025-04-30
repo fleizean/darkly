@@ -1,6 +1,6 @@
 # Tampering Attack in Survey Voting
 
-Anket sayfasında kullanıcılar Laurie, Mathieu, Thor, Ly ve Zaz için oy kullanabilirler. Oylamanın amacı açıklanmamış, bu yüzden en iyi ayakkabı bağcıklarına sahip kişiyi oyladığımızı varsayalım. Kullanıcılar seçtikleri kişi için 1 ile 10 arasında puan ekleyebilirler. Ancak, sayfanın koduna yakından bakarsak, aşağıdaki durumu gözlemleyebiliriz:
+Anket sayfasında kullanıcılar seçtikleri kişi için 1 ile 10 arasında puan ekleyebilirler. Ancak, sayfanın koduna yakından bakarsak, aşağıdaki durumu gözlemleyebiliriz:
 
 ![Anket Hilesi](survey-cheat.png)
 
@@ -28,7 +28,7 @@ Anket sayfasında kullanıcılar Laurie, Mathieu, Thor, Ly ve Zaz için oy kulla
 </td>
 ```
 
-Bu satırlar, oy kullanmak istediğimiz her kişi için tekrarlanır. Ancak, `option` etiketlerinin `value` özniteliğini istediğimiz gibi değiştirebiliriz. Böylece, Thor'a 651665195 puan ekleyerek onu lider yapabilirim! (Matematiği gerçekten yapmadım, ama fikir bu).
+ `option` etiketlerinin `value` özniteliğini istediğimiz gibi değiştirebiliriz. Böylece, Thor'a 651665195 eklersek ve onu seçersek flag ı elde ediyoruz.
 
 ## Bunu Nasıl Önleriz?
 
